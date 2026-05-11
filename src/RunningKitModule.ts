@@ -1,12 +1,20 @@
-import { NativeModule, requireNativeModule } from 'expo';
+import { NativeModule, requireNativeModule } from "expo";
 
-import { RunningKitModuleEvents } from './RunningKit.types';
+import {
+  RunningKitEvents,
+  WorkoutType,
+  PermissionsResult,
+  SessionSummary,
+} from "./RunningKit.types";
 
-declare class RunningKitModule extends NativeModule<RunningKitModuleEvents> {
-  PI: number;
-  hello(): string;
-  setValueAsync(value: string): Promise<void>;
+declare class RunningKitModule extends NativeModule<RunningKitEvents> {
+  requestPermissions(): Promise<PermissionsResult>;
+  startWorkout(type: WorkoutType): Promise<void>;
+  autoPauseWorkout(): void;
+  pauseWorkout(): void;
+  resumeWorkout(): void;
+  stopWorkout(): Promise<SessionSummary>;
 }
 
 // This call loads the native module object from the JSI.
-export default requireNativeModule<RunningKitModule>('RunningKit');
+export default requireNativeModule<RunningKitModule>("RunningKit");

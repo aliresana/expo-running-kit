@@ -1,9 +1,22 @@
 {
-  "name": "running-kit",
-  "version": "0.1.0",
-  "description": "A native SDK for tracking running workouts",
+  "name": "expo-running-kit",
+  "version": "1.0.0",
+  "description": "Expo native module for tracking running and walking workouts — GPS, pace, cadence, auto-pause, and laps.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "files": [
+    "build",
+    "ios",
+    "android/src",
+    "android/build.gradle",
+    "expo-module.config.json"
+  ],
   "scripts": {
     "build": "expo-module build",
     "clean": "expo-module clean",
@@ -18,16 +31,29 @@
   "keywords": [
     "react-native",
     "expo",
-    "running-kit",
-    "RunningKit"
+    "expo-module",
+    "running",
+    "workout",
+    "fitness",
+    "gps",
+    "pedometer",
+    "pace",
+    "cadence",
+    "auto-pause",
+    "health",
+    "ios",
+    "android"
   ],
-  "repository": "https://github.com/aliresana/react-native-running-kit.git",
-  "bugs": {
-    "url": "https://github.com/aliresana/react-native-running-kit.git/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliresana/expo-running-kit.git"
   },
-  "author": "Alireza Sarinavaie <ali.resana@gmail.com> (aliresana)",
+  "bugs": {
+    "url": "https://github.com/aliresana/expo-running-kit/issues"
+  },
+  "author": "Alireza Sarinavaie <ali.resana@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/aliresana/react-native-running-kit.git#readme",
+  "homepage": "https://github.com/aliresana/expo-running-kit#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "~19.1.1",
